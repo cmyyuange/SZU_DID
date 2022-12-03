@@ -23,6 +23,7 @@ public class Windows extends JFrame {
         JProgressBar progressBar = new JProgressBar(JProgressBar.HORIZONTAL,0,100);
         progressBar.setBorderPainted(true);
         progressBar.setStringPainted(true);
+        progressBar.setString("正在与服务器进行连接......");
         progress.add(progressBar,BorderLayout.SOUTH);
         progress.add(new JLabel(new ImageIcon("src\\main\\resources\\szu.png")),BorderLayout.CENTER);
         progress.pack();
@@ -109,10 +110,10 @@ public class Windows extends JFrame {
         JButton noKeyButton = new JButton("无秘钥创建DID");
         noKeyButton.addActionListener(e -> {
             String[] option = {"学生","教师","课程"};
-            int n = JOptionPane.showOptionDialog(this,"请选择一个角色","选择角色",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,option,option[0]);
+            int n = JOptionPane.showOptionDialog(this,"请选择一个角色","选择角色",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,option,-1);
             if (n == 0){
                 String[] optionStudent = {"身份","学业"};
-                int m = JOptionPane.showOptionDialog(this,"请选择一个种类","选择种类",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,optionStudent,optionStudent[0]);
+                int m = JOptionPane.showOptionDialog(this,"请选择一个种类","选择种类",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,optionStudent,-1);
                 if (m == 0) {
 
                 }else {
@@ -120,24 +121,45 @@ public class Windows extends JFrame {
                 }
             } else if (n == 1) {
                 String[] optionTeacher = {"身份","教学"};
-                int j = JOptionPane.showOptionDialog(this,"请选择一个种类","选择种类",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,optionTeacher,optionTeacher[0]);
+                int j = JOptionPane.showOptionDialog(this,"请选择一个种类","选择种类",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,optionTeacher,-1);
                 if (j == 0) {
 
                 }else {
 
                 }
-            }else {
-                String key = JOptionPane.showInputDialog(this,"请输入教务处秘钥：","教务处登录",JOptionPane.INFORMATION_MESSAGE);
-                if (key.equals("22345678")){
+            }else if(n == 2){
+                JPasswordField passwordField = new JPasswordField();
+                Object[] message = {"请输入教务处秘钥：",passwordField};
+                JOptionPane.showMessageDialog(this, message, "教务处登录",  JOptionPane.INFORMATION_MESSAGE);
+                if (new String(passwordField.getPassword()).equals("22345678")){
                     JOptionPane.showMessageDialog(this,"登陆成功！","成功",JOptionPane.INFORMATION_MESSAGE);
                 }else {
                     JOptionPane.showMessageDialog(this,"秘钥错误！","失败",JOptionPane.INFORMATION_MESSAGE);
                 }
+                passwordField.setText("");
             }
         });
         JButton KeyButton = new JButton("有秘钥创建DID");
         KeyButton.addActionListener(e -> {
-            createButtonPanel.setVisible(false);
+            String[] option = {"学生","教师"};
+            int n = JOptionPane.showOptionDialog(this,"请选择一个角色","选择角色",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,option,-1);
+            if (n == 0){
+                String[] optionStudent = {"身份","学业"};
+                int m = JOptionPane.showOptionDialog(this,"请选择一个种类","选择种类",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,optionStudent,-1);
+                if (m == 0) {
+
+                }else {
+
+                }
+            } else if (n == 1) {
+                String[] optionTeacher = {"身份","教学"};
+                int j = JOptionPane.showOptionDialog(this,"请选择一个种类","选择种类",JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,null,optionTeacher,-1);
+                if (j == 0) {
+
+                }else {
+
+                }
+            }
         });
         JButton returnButton1 = new JButton("返回主菜单");
         returnButton1.addActionListener(e -> cardLayout.show(mainPanel,"主菜单"));
@@ -155,9 +177,11 @@ class ProgressThread extends Thread{
     }
     public void run(){
         for (int i = 0; i < 80; i++) {
-            progressBar.setValue(i);
+            if (progressBar.getValue() < i){
+                progressBar.setValue(i);
+            }
             try {
-                Thread.sleep(20);
+                Thread.sleep(50);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
