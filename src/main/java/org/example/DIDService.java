@@ -35,6 +35,7 @@ public class DIDService {
 
     String getDIDDocument(String DID){
         ResponseData<String> response = weIdService.getWeIdDocumentJson(DID);
+        System.out.println(response);
         return response.getResult();
     }
 

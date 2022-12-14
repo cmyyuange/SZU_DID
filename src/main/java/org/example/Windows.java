@@ -1,6 +1,7 @@
 package org.example;
 
 import com.webank.weid.protocol.base.WeIdPrivateKey;
+import com.webank.weid.protocol.request.CreateWeIdArgs;
 import com.webank.weid.protocol.request.ServiceArgs;
 import com.webank.weid.protocol.response.CreateWeIdDataResult;
 import com.webank.weid.protocol.response.ResponseData;
@@ -176,11 +177,6 @@ public class Windows extends JFrame {
                     String data = "学生课程DID";
                     String result = didService.create(data);
                     showMessage(result);
-//                    System.out.println("++++++++++++++++++++");
-//                    WeIdService weIdService1 = new WeIdServiceImpl();
-//                    ResponseData<CreateWeIdDataResult> response = weIdService1.createWeId();
-//                    System.out.println(response);
-//                    System.out.println("++++++++++++++++++++");
                 }
             } else if (n == 1) {// 教师
                 String[] optionTeacher = {"身份","教学"};
