@@ -11,6 +11,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Windows extends JFrame {
     public Windows() throws InterruptedException {
@@ -102,7 +106,7 @@ public class Windows extends JFrame {
             String DID = JOptionPane.showInputDialog(this,"请输入要查询的DID：","查询DID",JOptionPane.INFORMATION_MESSAGE);
             if (DID != null){
                 String didDocument = didService.getDIDDocument(DID);
-                showDIDDocument(didDocument);
+                showMessage(didDocument);
             }
         });
         DIDbuttonPanel.add(createDIDButton);
@@ -116,8 +120,9 @@ public class Windows extends JFrame {
         curriculumPanel.setLayout(new BorderLayout());
         JPanel curriculumTextPanel = new JPanel();
         JTextArea showDID = new JTextArea();
+        showDID.setEditable(false);
         curriculumPanel.add(showDID,BorderLayout.CENTER);
-        curriculumTextPanel.setLayout(new GridLayout(3,3));
+        curriculumTextPanel.setLayout(new GridLayout(4,3));
         curriculumTextPanel.add(new JLabel("          课程DID："));
         JTextField text1 = new JTextField();
         curriculumTextPanel.add(text1);
@@ -132,13 +137,16 @@ public class Windows extends JFrame {
         curriculumTextPanel.add(check2);
         curriculumPanel.add(curriculumTextPanel,BorderLayout.NORTH);
         curriculumTextPanel.add(new JLabel("选课人DID私钥"));
-        JPasswordField password = new JPasswordField();
-        curriculumTextPanel.add(password);
+        JPasswordField password1 = new JPasswordField();
+        curriculumTextPanel.add(password1);
+        curriculumTextPanel.add(new JLabel(""));
+        curriculumTextPanel.add(new JLabel("课程DID私钥"));
+        JPasswordField password2 = new JPasswordField();
+        curriculumTextPanel.add(password2);
         JPanel curriculumMenuButton = new JPanel();
         JButton yes = new JButton("确定选课");
         yes.addActionListener(e -> {
-            // TODO:课程也需要写入
-            boolean result = didService.addMessage(text1.getText(), text2.getText(), new String(password.getPassword()));
+            boolean result = didService.addMessage(text1.getText(), text2.getText(), new String(password1.getPassword()), new String(password2.getPassword()));
             if (result) {
                 JOptionPane.showMessageDialog(this,"选课成功！","选课成功！",JOptionPane.INFORMATION_MESSAGE);
             }else {
@@ -166,8 +174,13 @@ public class Windows extends JFrame {
                     createStudentDialog(didService);
                 }else if (m == 1){
                     String data = "学生课程DID";
-                    didService.create(data);
-                    // TODO:对返回的数据进行展示，和生成文件保存
+                    String result = didService.create(data);
+                    showMessage(result);
+//                    System.out.println("++++++++++++++++++++");
+//                    WeIdService weIdService1 = new WeIdServiceImpl();
+//                    ResponseData<CreateWeIdDataResult> response = weIdService1.createWeId();
+//                    System.out.println(response);
+//                    System.out.println("++++++++++++++++++++");
                 }
             } else if (n == 1) {// 教师
                 String[] optionTeacher = {"身份","教学"};
@@ -176,8 +189,8 @@ public class Windows extends JFrame {
                     createTeacherDialog(didService);
                 }else if(j == 1){
                     String data = "老师教学DID";
-                    didService.create(data);
-                    // TODO:对返回的数据进行展示，和生成文件保存
+                    String result = didService.create(data);
+                    showMessage(result);
                 }
             }else if(n == 2){
                 JPasswordField passwordField = new JPasswordField();
@@ -252,23 +265,9 @@ public class Windows extends JFrame {
         JPanel dataPanel = new JPanel();
         dataPanel.setLayout(new GridLayout(1,3));
         JComboBox<String> yearCombo = new JComboBox<>();
-        yearCombo.setMaximumRowCount(4);
-        for (int i = 1990; i < 2022; i++) {
-            yearCombo.addItem(i + "年");
-        }
         JComboBox<String> monthCombo = new JComboBox<>();
-        monthCombo.setMaximumRowCount(4);
-        for (int i = 1; i < 13; i++) {
-            monthCombo.addItem(i + "月");
-        }
         JComboBox<String> dayCombo = new JComboBox<>();
-        dayCombo.setMaximumRowCount(4);
-        for (int i = 1; i < 32; i++) {
-            dayCombo.addItem(i + "日");
-        }
-        dataPanel.add(yearCombo);
-        dataPanel.add(monthCombo);
-        dataPanel.add(dayCombo);
+        processDateCombo(yearCombo,monthCombo,dayCombo,dataPanel);
         textPanel.add(dataPanel);
         textPanel.add(new JLabel("                     性别："));
         ButtonGroup genderGroup = new ButtonGroup();
@@ -298,8 +297,8 @@ public class Windows extends JFrame {
                     "出生日期:" + year + month + day + "\n" +
                     "性别:" + gender;
 
-            didService.create(data);
-            // TODO:对返回的数据进行展示，和生成文件保存
+            String result = didService.create(data);
+            showMessage(result);
         });
         JButton panel1Button2= new JButton("取消");
         panel1Button2.addActionListener(event -> dialog.dispose());
@@ -331,23 +330,9 @@ public class Windows extends JFrame {
         JPanel dataPanel = new JPanel();
         dataPanel.setLayout(new GridLayout(1,3));
         JComboBox<String> yearCombo = new JComboBox<>();
-        yearCombo.setMaximumRowCount(4);
-        for (int i = 1990; i < 2022; i++) {
-            yearCombo.addItem(i + "年");
-        }
         JComboBox<String> monthCombo = new JComboBox<>();
-        monthCombo.setMaximumRowCount(4);
-        for (int i = 1; i < 13; i++) {
-            monthCombo.addItem(i + "月");
-        }
         JComboBox<String> dayCombo = new JComboBox<>();
-        dayCombo.setMaximumRowCount(4);
-        for (int i = 1; i < 32; i++) {
-            dayCombo.addItem(i + "日");
-        }
-        dataPanel.add(yearCombo);
-        dataPanel.add(monthCombo);
-        dataPanel.add(dayCombo);
+        processDateCombo(yearCombo,monthCombo,dayCombo,dataPanel);
         textPanel.add(dataPanel);
         textPanel.add(new JLabel("                     性别："));
         ButtonGroup genderGroup = new ButtonGroup();
@@ -359,7 +344,6 @@ public class Windows extends JFrame {
         genderPanel.add(man);
         genderPanel.add(girl);
         textPanel.add(genderPanel);
-
         JPanel panelButton = new JPanel();
         JButton panel1Button1= new JButton("确定");
         panel1Button1.addActionListener(event -> {
@@ -375,8 +359,8 @@ public class Windows extends JFrame {
                     "出生日期:" + year + month + day + "\n" +
                     "性别:" + gender;
 
-            didService.create(data);
-            // TODO:对返回的数据进行展示，和生成文件保存
+            String result = didService.create(data);
+            showMessage(result);
         });
         JButton panel1Button2= new JButton("取消");
         panel1Button2.addActionListener(event -> dialog.dispose());
@@ -391,20 +375,17 @@ public class Windows extends JFrame {
 
     void createCurriculumDialog(DIDService didService){
         JDialog dialog = new JDialog(this,"输入课程信息",true);
-        dialog.setSize(400,200);
+        dialog.setSize(300,200);
         dialog.setLocationRelativeTo(null);
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
 
         // TODO:课程信息改进
         JPanel textPanel = new JPanel();
-        textPanel.setLayout(new GridLayout(4,2));
+        textPanel.setLayout(new GridLayout(3,2));
         textPanel.add(new JLabel("                    课程名称："));
         JTextField nameField = new JTextField();
         textPanel.add(nameField);
-        textPanel.add(new JLabel("                    工号："));
-        JTextField numberField = new JTextField();
-        textPanel.add(numberField);
         textPanel.add(new JLabel("                    开课学期："));
         JPanel dataPanel = new JPanel();
         dataPanel.setLayout(new GridLayout(1,2));
@@ -435,18 +416,16 @@ public class Windows extends JFrame {
         JButton panel1Button1= new JButton("确定");
         panel1Button1.addActionListener(event -> {
             String name = nameField.getText();
-            String number = numberField.getText();
             String year = (String) yearCombo.getSelectedItem();
             String semester = (String) semesterCombo.getSelectedItem();
             String category = compulsory.isSelected() ?  "必修" : "选修";
             String data = "大学课程" + "\n" +
                     "课程名称:" + name + "\n" +
-                    "工号:" + number + "\n" +
                     "开课学期:" + year + semester + "\n" +
                     "类别:" + category;
 
-            didService.create(data);
-            // TODO:对返回的数据进行展示，和生成文件保存
+            String result = didService.create(data);
+            showMessage(result);
         });
         JButton panel1Button2= new JButton("取消");
         panel1Button2.addActionListener(event -> dialog.dispose());
@@ -459,12 +438,58 @@ public class Windows extends JFrame {
         dialog.setVisible(true);
     }
 
-    void showDIDDocument(String didDocument){
-        JDialog dialog = new JDialog(this,"DID Document",true);
-        dialog.setSize(400,200);
+    void showMessage(String message){
+        JDialog dialog = new JDialog(this,"相关信息",true);
+        dialog.setSize(400,400);
         dialog.setLocationRelativeTo(null);
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
-        // TODO:展示DID Document
+        JTextArea msg = new JTextArea();
+        msg.setEditable(false);
+        msg.setText(message);
+        panel.add(msg,BorderLayout.CENTER);
+        JPanel BtPanel = new JPanel();
+        JButton cancel = new JButton("取消");
+        cancel.addActionListener(e -> dialog.dispose());
+        JButton createFile = new JButton("生成文件");
+        createFile.addActionListener(e -> {
+            String fileName = JOptionPane.showInputDialog(this,"请输入文件名：","输入文件名",JOptionPane.INFORMATION_MESSAGE);
+            File file = new File("src\\..\\..\\" + fileName + ".txt");
+            try {
+                boolean b = file.createNewFile();
+                if (b) {
+                    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+                    bufferedWriter.write(message);
+                    bufferedWriter.flush();
+                    bufferedWriter.close();
+                }else {
+                    JOptionPane.showMessageDialog(this,"文件名已存在！","文件名已存在！",JOptionPane.WARNING_MESSAGE);
+                }
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        BtPanel.add(createFile);
+        panel.add(BtPanel,BorderLayout.SOUTH);
+        dialog.add(panel);
+        dialog.setVisible(true);
+    }
+
+    void processDateCombo(JComboBox<String> yearCombo,JComboBox<String> monthCombo,JComboBox<String> dayCombo,JPanel dataPanel){
+        yearCombo.setMaximumRowCount(4);
+        for (int i = 1990; i < 2022; i++) {
+            yearCombo.addItem(i + "年");
+        }
+        monthCombo.setMaximumRowCount(4);
+        for (int i = 1; i < 13; i++) {
+            monthCombo.addItem(i + "月");
+        }
+        dayCombo.setMaximumRowCount(4);
+        for (int i = 1; i < 32; i++) {
+            dayCombo.addItem(i + "日");
+        }
+        dataPanel.add(yearCombo);
+        dataPanel.add(monthCombo);
+        dataPanel.add(dayCombo);
     }
 }
