@@ -18,57 +18,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Windows extends JFrame {
-    public Windows() throws InterruptedException {
-
-        // 进度条设置
-        JFrame progress = new JFrame();
-        progress.setLayout(new BorderLayout());
-        progress.setResizable(false);
-        progress.setAlwaysOnTop(true);
-        Image szu = new ImageIcon("src\\main\\resources\\szu.png").getImage();
-        progress.setIconImage(szu);
-        progress.setUndecorated(true);
-        JProgressBar progressBar = new JProgressBar(JProgressBar.HORIZONTAL,0,100);
-        progressBar.setBorderPainted(true);
-        progressBar.setStringPainted(true);
-        progressBar.setString("正在与服务器进行连接......");
-        progress.add(progressBar,BorderLayout.SOUTH);
-        progress.add(new JLabel(new ImageIcon("src\\main\\resources\\szu.png")),BorderLayout.CENTER);
-        progress.pack();
-        progress.setVisible(true);
-        progress.setLocationRelativeTo(null);
-
-        // 进度条进度
-        Thread progressThread = new ProgressThread(progressBar);
-        progressThread.start();
-        EvidenceService evidenceService = new EvidenceServiceImpl();
-        progressBar.setValue(80);
-        Thread.sleep(100);
-        AuthorityIssuerService authorityIssuerService = new AuthorityIssuerServiceImpl();
-        progressBar.setValue(85);
-        Thread.sleep(100);
-        CptService cptService = new CptServiceImpl();
-        progressBar.setValue(90);
-        Thread.sleep(100);
-        CredentialPojoService credentialPojoService = new CredentialPojoServiceImpl();
-        progressBar.setValue(95);
-        Thread.sleep(100);
-        WeIdService weIdService = new WeIdServiceImpl();
-        DIDService didService = new DIDService(weIdService);
-        progressBar.setValue(100);
-        Thread.sleep(100);
-
-        // 进度条关闭并打开主窗口
-        progress.dispose();
-        setVisible(true);
+    public Windows(EvidenceService evidenceService,AuthorityIssuerService authorityIssuerService,CptService cptService,CredentialPojoService credentialPojoService,DIDService didService) {
 
         // 窗体设置
         addWindowListener(new WindowListen(this));
         setSize(500,400);
         setResizable(false);
+        Image szu = new ImageIcon("src\\main\\resources\\szu.png").getImage();
         setIconImage(szu);
         setTitle("深圳大学DID");
         setLocationRelativeTo(null);
+        setVisible(true);
 
         // 布局设置
         JPanel mainPanel = new JPanel();
@@ -96,8 +56,6 @@ public class Windows extends JFrame {
         DIDPanel.add(DIDbuttonPanel,BorderLayout.SOUTH);
         JButton createDIDButton = new JButton("创建DID");
         createDIDButton.addActionListener(e -> cardLayout.show(mainPanel,"创建DID菜单"));
-        JButton returnButton = new JButton("返回主菜单");
-        returnButton.addActionListener(e -> cardLayout.show(mainPanel,"主菜单"));
         JButton countDIDButton = new JButton("查询DID数量");
         countDIDButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(this,"DID的总数为：" + didService.getCount(),"DID数量查询结果",JOptionPane.INFORMATION_MESSAGE);
@@ -110,6 +68,8 @@ public class Windows extends JFrame {
                 showMessage(didDocument);
             }
         });
+        JButton returnButton = new JButton("返回主菜单");
+        returnButton.addActionListener(e -> cardLayout.show(mainPanel,"主菜单"));
         DIDbuttonPanel.add(createDIDButton);
         DIDbuttonPanel.add(countDIDButton);
         DIDbuttonPanel.add(DIDDocumentButton);
@@ -122,7 +82,8 @@ public class Windows extends JFrame {
         JPanel curriculumTextPanel = new JPanel();
         JTextArea showDID = new JTextArea();
         showDID.setEditable(false);
-        curriculumPanel.add(showDID,BorderLayout.CENTER);
+        JScrollPane jScrollPane = new JScrollPane(showDID,ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        curriculumPanel.add(jScrollPane,BorderLayout.CENTER);
         curriculumTextPanel.setLayout(new GridLayout(4,3));
         curriculumTextPanel.add(new JLabel("          课程DID："));
         JTextField text1 = new JTextField();
@@ -137,11 +98,11 @@ public class Windows extends JFrame {
         check2.addActionListener(e -> showDID.setText(didService.getDIDDocument(text2.getText())));
         curriculumTextPanel.add(check2);
         curriculumPanel.add(curriculumTextPanel,BorderLayout.NORTH);
-        curriculumTextPanel.add(new JLabel("选课人DID私钥"));
+        curriculumTextPanel.add(new JLabel("          选课人DID私钥"));
         JPasswordField password1 = new JPasswordField();
         curriculumTextPanel.add(password1);
         curriculumTextPanel.add(new JLabel(""));
-        curriculumTextPanel.add(new JLabel("课程DID私钥"));
+        curriculumTextPanel.add(new JLabel("          课程DID私钥"));
         JPasswordField password2 = new JPasswordField();
         curriculumTextPanel.add(password2);
         JPanel curriculumMenuButton = new JPanel();
@@ -155,7 +116,9 @@ public class Windows extends JFrame {
             }
         });
         curriculumMenuButton.add(yes);
-        curriculumMenuButton.add(returnButton);
+        JButton returnButton2 = new JButton("返回主菜单");
+        returnButton2.addActionListener(e -> cardLayout.show(mainPanel,"主菜单"));
+        curriculumMenuButton.add(returnButton2);
         curriculumPanel.add(curriculumMenuButton,BorderLayout.SOUTH);
         mainPanel.add("课程服务菜单",curriculumPanel);
 
@@ -436,14 +399,15 @@ public class Windows extends JFrame {
 
     void showMessage(String message){
         JDialog dialog = new JDialog(this,"相关信息",true);
-        dialog.setSize(400,400);
+        dialog.setSize(600,500);
         dialog.setLocationRelativeTo(null);
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
         JTextArea msg = new JTextArea();
+        JScrollPane jScrollPane = new JScrollPane(msg, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         msg.setEditable(false);
         msg.setText(message);
-        panel.add(msg,BorderLayout.CENTER);
+        panel.add(jScrollPane,BorderLayout.CENTER);
         JPanel BtPanel = new JPanel();
         JButton cancel = new JButton("取消");
         cancel.addActionListener(e -> dialog.dispose());

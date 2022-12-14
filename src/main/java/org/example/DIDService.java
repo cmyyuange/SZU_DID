@@ -35,14 +35,13 @@ public class DIDService {
 
     String getDIDDocument(String DID){
         ResponseData<String> response = weIdService.getWeIdDocumentJson(DID);
-        System.out.println(response);
         return response.getResult();
     }
 
     boolean addMessage(String curriculumDID,String did,String priKey,String curriculumPriKey){
         ServiceArgs serviceArgs1 = new ServiceArgs();
         // TODO:是否使用更详细的信息
-        serviceArgs1.setType(curriculumDID);
+        serviceArgs1.setType(curriculumDID + "\n" + "");
         serviceArgs1.setServiceEndpoint("深圳大学");
         WeIdPrivateKey weIdPrivateKey1 = new WeIdPrivateKey();
         weIdPrivateKey1.setPrivateKey(priKey);
