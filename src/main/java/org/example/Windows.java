@@ -139,6 +139,7 @@ public class Windows extends JFrame {
                 }else if (m == 1){
                     String data = "学生课程DID";
                     String result = didService.create(data);
+                    result = result.replace(" ","\n");
                     showMessage(result);
                 }
             } else if (n == 1) {// 教师
@@ -149,6 +150,7 @@ public class Windows extends JFrame {
                 }else if(j == 1){
                     String data = "老师教学DID";
                     String result = didService.create(data);
+                    result = result.replace(" ","\n");
                     showMessage(result);
                 }
             }else if(n == 2){
@@ -257,7 +259,9 @@ public class Windows extends JFrame {
                     "性别:" + gender;
 
             String result = didService.create(data);
+            result = result.replace(" ","\n");
             showMessage(result);
+            dialog.dispose();
         });
         JButton panel1Button2= new JButton("取消");
         panel1Button2.addActionListener(event -> dialog.dispose());
@@ -319,7 +323,9 @@ public class Windows extends JFrame {
                     "性别:" + gender;
 
             String result = didService.create(data);
+            result = result.replace(" ","\n");
             showMessage(result);
+            dialog.dispose();
         });
         JButton panel1Button2= new JButton("取消");
         panel1Button2.addActionListener(event -> dialog.dispose());
@@ -384,7 +390,9 @@ public class Windows extends JFrame {
                     "类别:" + category;
 
             String result = didService.create(data);
+            result = result.replace(" ","\n");
             showMessage(result);
+            dialog.dispose();
         });
         JButton panel1Button2= new JButton("取消");
         panel1Button2.addActionListener(event -> dialog.dispose());
@@ -422,6 +430,7 @@ public class Windows extends JFrame {
                     bufferedWriter.write(message);
                     bufferedWriter.flush();
                     bufferedWriter.close();
+                    JOptionPane.showMessageDialog(this,"文件生成成功！","文件生成成功！",JOptionPane.WARNING_MESSAGE);
                 }else {
                     JOptionPane.showMessageDialog(this,"文件名已存在！","文件名已存在！",JOptionPane.WARNING_MESSAGE);
                 }
