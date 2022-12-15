@@ -148,7 +148,7 @@ public class Windows extends JFrame {
                 if (j == 0) {
                     createTeacherDialog(didService);
                 }else if(j == 1){
-                    String data = "老师教学DID";
+                    String data = "教师教学DID";
                     String result = didService.create(data);
                     result = result.replace(" ","\n");
                     showMessage(result);
@@ -251,12 +251,7 @@ public class Windows extends JFrame {
             String month = (String) monthCombo.getSelectedItem();
             String day = (String) dayCombo.getSelectedItem();
             String gender = man.isSelected() ?  "男" : "女";
-            String data = "学生证" + "\n" +
-                    "名字:" + name + "\n" +
-                    "学号:" + number + "\n" +
-                    "专业:" + job + "\n" +
-                    "出生日期:" + year + month + day + "\n" +
-                    "性别:" + gender;
+            String data = "学生证 " + "名字:" + name + " 学号:" + number + " 专业:" + job + " 出生日期:" + year + month + day + " 性别:" + gender;
 
             String result = didService.create(data);
             result = result.replace(" ","\n");
@@ -316,11 +311,7 @@ public class Windows extends JFrame {
             String month = (String) monthCombo.getSelectedItem();
             String day = (String) dayCombo.getSelectedItem();
             String gender = man.isSelected() ?  "男" : "女";
-            String data = "教师证" + "\n" +
-                    "名字:" + name + "\n" +
-                    "工号:" + number + "\n" +
-                    "出生日期:" + year + month + day + "\n" +
-                    "性别:" + gender;
+            String data = "教师证 " + "名字:" + name + " 工号:" + number + " 出生日期:" + year + month + day + " 性别:" + gender;
 
             String result = didService.create(data);
             result = result.replace(" ","\n");
@@ -380,15 +371,11 @@ public class Windows extends JFrame {
         JPanel panelButton = new JPanel();
         JButton panel1Button1= new JButton("确定");
         panel1Button1.addActionListener(event -> {
-            String name = nameField.getText();
+            String name = nameField.getText() + "*";
             String year = (String) yearCombo.getSelectedItem();
             String semester = (String) semesterCombo.getSelectedItem();
             String category = compulsory.isSelected() ?  "必修" : "选修";
-            String data = "大学课程" + "\n" +
-                    "课程名称:" + name + "\n" +
-                    "开课学期:" + year + semester + "\n" +
-                    "类别:" + category;
-
+            String data = "大学课程 " + "课程名称:" + name + " 开课学期:" + year + semester + " 类别:" + category;
             String result = didService.create(data);
             result = result.replace(" ","\n");
             showMessage(result);

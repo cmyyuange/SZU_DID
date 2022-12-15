@@ -41,18 +41,27 @@ public class DIDService {
     boolean addMessage(String curriculumDID,String did,String priKey,String curriculumPriKey){
         ServiceArgs serviceArgs1 = new ServiceArgs();
         // TODO:是否使用更详细的信息
-        serviceArgs1.setType(curriculumDID + "\n" + "");
+        boolean isTeacher;
+        isTeacher = getDIDDocument(curriculumDID).contains("教师教学DID");
+        int start = getDIDDocument(curriculumDID).indexOf("课程名称:");
+        int end = getDIDDocument(curriculumDID).indexOf("*");
+        serviceArgs1.setType(getDIDDocument(curriculumDID).substring(start,end) + " 课程DID" + curriculumDID);
         serviceArgs1.setServiceEndpoint("深圳大学");
         WeIdPrivateKey weIdPrivateKey1 = new WeIdPrivateKey();
         weIdPrivateKey1.setPrivateKey(priKey);
         ResponseData<Boolean> response1 = weIdService.setService(did, serviceArgs1, weIdPrivateKey1);
-
+        ResponseData<Boolean> response2;
         ServiceArgs serviceArgs2 = new ServiceArgs();
-        serviceArgs2.setType(did);
         serviceArgs2.setServiceEndpoint("深圳大学");
         WeIdPrivateKey weIdPrivateKey2 = new WeIdPrivateKey();
         weIdPrivateKey2.setPrivateKey(curriculumPriKey);
-        ResponseData<Boolean> response2 = weIdService.setService(curriculumDID, serviceArgs2, weIdPrivateKey2);
+        if (!isTeacher) {
+            serviceArgs2.setType("学生DID:" + did);
+            response2 = weIdService.setService(curriculumDID, serviceArgs2, weIdPrivateKey2);
+        }else {
+            serviceArgs2.setType("教师DID:" + did);
+            response2 = weIdService.setService(curriculumDID, serviceArgs2, weIdPrivateKey2);
+        }
         return response1.getResult() && response2.getResult();
     }
 }
