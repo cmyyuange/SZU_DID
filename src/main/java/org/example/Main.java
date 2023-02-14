@@ -2,52 +2,57 @@ package org.example;
 
 import com.webank.weid.rpc.*;
 import com.webank.weid.service.impl.*;
+import com.webank.weid.suite.api.persistence.PersistenceFactory;
+import com.webank.weid.suite.api.persistence.inf.Persistence;
+import com.webank.weid.suite.api.persistence.params.PersistenceType;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.awt.*;
+public class Main extends Application{
 
-public class Main {
-    public static void main(String[] args) throws InterruptedException {
-        // 进度条设置
-        JFrame progress = new JFrame();
-        progress.setLayout(new BorderLayout());
-        progress.setResizable(false);
-        progress.setAlwaysOnTop(true);
-        Image szu = new ImageIcon("src\\main\\resources\\szu.png").getImage();
-        progress.setIconImage(szu);
-        progress.setUndecorated(true);
-        JProgressBar progressBar = new JProgressBar(JProgressBar.HORIZONTAL,0,100);
-        progressBar.setBorderPainted(true);
-        progressBar.setStringPainted(true);
-        progressBar.setString("正在与服务器进行连接......");
-        progress.add(progressBar,BorderLayout.SOUTH);
-        progress.add(new JLabel(new ImageIcon("src\\main\\resources\\szu.png")),BorderLayout.CENTER);
-        progress.pack();
-        progress.setVisible(true);
-        progress.setLocationRelativeTo(null);
+    EvidenceService evidenceService;
+    AuthorityIssuerService authorityIssuerService;
+    CptService cptService;
+    CredentialPojoService credentialPojoService;
+    WeIdService weIdService;
+    Persistence persistence;
 
-        // 进度条进度
-        Thread progressThread = new ProgressThread(progressBar);
-        progressThread.start();
-        EvidenceService evidenceService = new EvidenceServiceImpl();
-        progressBar.setValue(80);
+    public void init() throws Exception{
+        super.init();
+        ProgressShow progressShow = new ProgressShow();
+        progressShow.show();
+        persistence = PersistenceFactory.build(PersistenceType.Mysql);
+        evidenceService = new EvidenceServiceImpl();
+        progressShow.setValue(80);
         Thread.sleep(100);
-        AuthorityIssuerService authorityIssuerService = new AuthorityIssuerServiceImpl();
-        progressBar.setValue(85);
+        authorityIssuerService = new AuthorityIssuerServiceImpl();
+        progressShow.setValue(85);
         Thread.sleep(100);
-        CptService cptService = new CptServiceImpl();
-        progressBar.setValue(90);
+        cptService = new CptServiceImpl();
+        progressShow.setValue(90);
         Thread.sleep(100);
-        CredentialPojoService credentialPojoService = new CredentialPojoServiceImpl();
-        progressBar.setValue(95);
+        credentialPojoService = new CredentialPojoServiceImpl();
+        progressShow.setValue(95);
         Thread.sleep(100);
-        WeIdService weIdService = new WeIdServiceImpl();
-        DIDService didService = new DIDService(weIdService);
-        progressBar.setValue(100);
+        weIdService = new WeIdServiceImpl();
+        progressShow.setValue(100);
         Thread.sleep(100);
 
         // 进度条关闭并打开主窗口
-        progress.dispose();
-        new Windows(evidenceService,authorityIssuerService,cptService,credentialPojoService,didService);
+        progressShow.close();
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        new Windows(persistence,evidenceService,authorityIssuerService,cptService,credentialPojoService,weIdService,primaryStage);
+    }
+
+    public void stop() throws Exception{
+        super.stop();
+        System.exit(0);
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
     }
 }

@@ -1,0 +1,33 @@
+#log1 {
+    -fx-background-color: GRAY;
+    -fx-alignment:center;
+    -fx-background-radius: 40;
+    -fx-opacity: 0.6;
+}
+
+#log2 {
+    -fx-background-color: GRAY;
+    -fx-alignment:center;
+    -fx-background-radius: 40;
+    -fx-opacity: 0.6;
+}
+
+.label
+{
+    -fx-font-weight:bold;
+    -fx-font-family:sample;
+    -fx-text-fill: #434343;
+    -fx-font-size:16;
+}
+
+.button {
+    -fx-font-weight:bold;
+    -fx-border-radius: 5;
+    -fx-color: #88ad9a;
+    -fx-text-fill: white;
+    -fx-font-size: 16;
+}
+
+.button:hover {
+    -fx-background-color: rgba(12, 80, 38, 0.67);
+}

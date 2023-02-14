@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class ProgressThread extends Thread{
     JProgressBar progressBar;
+
     public ProgressThread(JProgressBar progressBar){
         this.progressBar = progressBar;
     }
@@ -13,7 +14,7 @@ public class ProgressThread extends Thread{
                 progressBar.setValue(i);
             }
             try {
-                Thread.sleep(50);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
