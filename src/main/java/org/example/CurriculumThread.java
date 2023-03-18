@@ -4,7 +4,6 @@ import com.webank.weid.protocol.base.CredentialPojo;
 import com.webank.weid.protocol.base.WeIdAuthentication;
 import com.webank.weid.protocol.base.WeIdPrivateKey;
 import com.webank.weid.suite.api.persistence.inf.Persistence;
-import javafx.scene.control.Alert;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -51,9 +50,9 @@ public class CurriculumThread extends Thread{
                     priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 77);
 
                     if (didService.getDIDDocument(userDID).contains("学生课程DID")) {
-                        didService.addMessage(curriculumDID,priKey,"学生:" + userDID);
+                        didService.addMessage(curriculumDID,priKey,"深圳大学上课学生","学生:" + userDID);
                     }else {
-                        didService.addMessage(curriculumDID,priKey,"教师:" + userDID);
+                        didService.addMessage(curriculumDID,priKey,"深圳大学任课教师","教师:" + userDID);
                     }
                     persistence.delete("domain.defaultInfo",String.valueOf(i));
                     i++;
@@ -75,7 +74,7 @@ public class CurriculumThread extends Thread{
                         String message = "学生DID:" + credentialPojo.getClaim().get("课程DID").toString() +
                                 " 分数类型:" + credentialPojo.getClaim().get("分数类型").toString() +
                                 " 分数:" + credentialPojo.getClaim().get("分数").toString() + "*";
-                        didService.addMessage(credentialPojo.getClaim().get("课程DID").toString(),priKey,message);
+                        didService.addMessage(credentialPojo.getClaim().get("课程DID").toString(),priKey,"深圳大学学生课程成绩",message);
                         persistence.delete("domain.defaultInfo","studentScore" + i);
                     }
                     i++;
@@ -99,7 +98,7 @@ public class CurriculumThread extends Thread{
                         long score = Long.parseLong(curriculumDIDDoc.substring(start1 + 3,end1));
                         if (score >= 60) {
                             int start2 = didService.getDIDDocument(did).indexOf("学分:");
-                            int end2 = didService.getDIDDocument(did).indexOf("- 性质");
+                            int end2 = didService.getDIDDocument(did).indexOf("* 性质");
                             System.out.println(start2);
                             System.out.println(end2);
                             long credit = Long.parseLong(didService.getDIDDocument(did).substring(start2 + 3,end2));

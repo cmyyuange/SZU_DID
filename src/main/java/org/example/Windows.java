@@ -49,7 +49,7 @@ public class Windows {
                 alertShow("account文件创建失败！");
             }
         }
-        // 窗体设置
+        // TODO:窗体设置
         Image szu= new Image("image/szu.png");
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(szu);
@@ -57,7 +57,7 @@ public class Windows {
         primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.setTitle("深圳大学DID");
 
-        // 布局设置
+        // TODO:布局设置
         AnchorPane anchorPane = new AnchorPane();
         AnchorPane mainScenePane = new AnchorPane();
         AnchorPane DIDPanel = new AnchorPane();
@@ -348,7 +348,7 @@ public class Windows {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            boolean result = didService.addMessage(DIDs.getValue(),priKey,"课程名称:" + didService.getDIDDocument(textField2.getText()).substring(start,end)  + " &DID:" + textField2.getText());
+            boolean result = didService.addMessage(DIDs.getValue(),priKey,"深圳大学课程","课程名称:" + didService.getDIDDocument(textField2.getText()).substring(start,end)  + " &DID:" + textField2.getText());
             if (result) {
                 alertShow("选课成功！");
             }else {
@@ -498,7 +498,7 @@ public class Windows {
                 lessons.setLayoutX(175);
                 lessons.setLayoutY(35);
                 lessons.setOnAction(event1 -> {
-                    String result = cutResult(didService.create("学生课程DID"));
+                    String result = cutResult(didService.create("学生课程DID","深圳大学"));
                     File userTxt = new File("src\\main\\resources\\account\\" + user + ".txt");
                     if (userTxt.exists()) {
                         try {
@@ -527,12 +527,12 @@ public class Windows {
                     stage.close();
                     createTeacher(didService);
                 });
-                Button lessons = new Button("上课");
+                Button lessons = new Button("课程");
                 lessons.setPrefSize(100,30);
-                lessons.setLayoutX(75);
+                lessons.setLayoutX(175);
                 lessons.setLayoutY(35);
                 lessons.setOnAction(event1 -> {
-                    String result = cutResult(didService.create("教师课程DID"));
+                    String result = cutResult(didService.create("教师课程DID","深圳大学"));
                     File userTxt = new File("src\\main\\resources\\account\\" + user + ".txt");
                     if (userTxt.exists()) {
                         try {
@@ -584,13 +584,11 @@ public class Windows {
         createDIDPanel.getStylesheets().add("css/button.css");
 
         // TODO:CPT
-        // CPT菜单
         Button registerCpt = new Button("注册CPT");
         registerCpt.setPrefSize(200,30);
         registerCpt.setLayoutX(150);
         registerCpt.setLayoutY(100);
         registerCpt.setOnAction(event -> {
-            //TODO: 学生改为教务处
             if (role.equals("教务处")) {
                 Stage stage = new Stage();
                 AnchorPane anchorPane1 = new AnchorPane();
@@ -652,8 +650,7 @@ public class Windows {
         CPTPanel.getChildren().addAll(registerCpt,queryCpt,returnButton3);
         CPTPanel.getStylesheets().add("css/button.css");
 
-        // TODO:凭证
-        // 凭证菜单
+        // TODO:凭证菜单
         Button create = new Button("创建凭证");
         create.setPrefSize(200,30);
         create.setLayoutX(150);
@@ -749,7 +746,6 @@ public class Windows {
                     WeIdPrivateKey weIdPrivateKey = new WeIdPrivateKey();
                     weIdPrivateKey.setPrivateKey(priKey);
                     weIdAuthentication.setWeIdPrivateKey(weIdPrivateKey);
-                    // TODO:id
                     weIdAuthentication.setAuthenticationMethodId(issuer);
                     Map<String, Object> claim = new HashMap<>();
                     claim.put("课程DID", textField22.getText());
@@ -875,15 +871,15 @@ public class Windows {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setResizable(false);
             anchorPane1.getStylesheets().add("css/button.css");
-            Label fileName = new Label();
+            TextField fileName = new TextField();
             fileName.setPrefSize(100,30);
             fileName.setLayoutY(60);
-            fileName.setLayoutX(100);
+            fileName.setLayoutX(150);
             final String[] fileMessage = new String[1];
             Button load = new Button("选择文件");
             load.setPrefSize(100,30);
-            load.setLayoutX(100);
-            load.setLayoutY(20);
+            load.setLayoutX(30);
+            load.setLayoutY(60);
             load.setOnAction(event1 -> {
                 try {
                     FileChooser fileChooser = new FileChooser();
@@ -976,7 +972,7 @@ public class Windows {
     void createStudent(DIDService didService) {
         Stage stage = new Stage();
         AnchorPane anchorPane = new AnchorPane();
-        stage.setScene(new Scene(anchorPane,400,400));
+        stage.setScene(new Scene(anchorPane,400,250));
         stage.initStyle(StageStyle.UTILITY);
         stage.setTitle("输入学生信息");
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -999,36 +995,37 @@ public class Windows {
         ChoiceBox<String> subject = new ChoiceBox<>(FXCollections.observableArrayList("通信工程","集成电路","计算机科学与技术        ","软件工程","信息与通信工程","金融科技"));
         subject.setLayoutX(150);
         subject.setLayoutY(150);
-        Label label4 = new Label("性别");
-        label4.setLayoutX(100);
-        label4.setLayoutY(200);
-        ToggleGroup group = new ToggleGroup();
-        RadioButton man = new RadioButton("男");
-        man.setLayoutX(180);
-        man.setLayoutY(200);
-        man.setToggleGroup(group);
-        RadioButton girl = new RadioButton("女");
-        girl.setLayoutX(230);
-        girl.setLayoutY(200);
-        girl.setToggleGroup(group);
-        Label label5 = new Label("生日");
-        label5.setLayoutX(100);
-        label5.setLayoutY(250);
-        DatePicker datePicker = new DatePicker();
-        datePicker.setLayoutX(150);
-        datePicker.setLayoutY(250);
+//        Label label4 = new Label("性别");
+//        label4.setLayoutX(100);
+//        label4.setLayoutY(200);
+//        ToggleGroup group = new ToggleGroup();
+//        RadioButton man = new RadioButton("男");
+//        man.setLayoutX(180);
+//        man.setLayoutY(200);
+//        man.setToggleGroup(group);
+//        RadioButton girl = new RadioButton("女");
+//        girl.setLayoutX(230);
+//        girl.setLayoutY(200);
+//        girl.setToggleGroup(group);
+//        Label label5 = new Label("生日");
+//        label5.setLayoutX(100);
+//        label5.setLayoutY(250);
+//        DatePicker datePicker = new DatePicker();
+//        datePicker.setLayoutX(150);
+//        datePicker.setLayoutY(250);
         Button yes = new Button("确定");
         yes.setPrefSize(100,30);
         yes.setLayoutX(150);
-        yes.setLayoutY(350);
+        yes.setLayoutY(200);
         yes.setOnAction(event -> {
             String name = nameField.getText();
             String number = numberField.getText();
             String job = subject.getValue();
-            String gender = man.isSelected() ?  "男" : "女";
-            String date = datePicker.getValue().toString();
-            String data = "学生DID " + "|姓名:" + name + " |学号:" + number + " |专业:" + job + " |性别:" + gender + " |出生日期:" + date + "*";
-            String result = cutResult(didService.create(data));
+//            String gender = man.isSelected() ?  "男" : "女";
+//            String date = datePicker.getValue().toString();
+//            String data = "|姓名:" + name + " |学号:" + number + " |专业:" + job + " |性别:" + gender + " |出生日期:" + date + "*";
+            String data = "|姓名:" + name + " |学号:" + number + " |专业:" + job + "*";
+            String result = cutResult(didService.create("学生DID",data));
             File userTxt = new File("src\\main\\resources\\account\\" + user + ".txt");
             if (userTxt.exists()) {
                 try {
@@ -1051,7 +1048,7 @@ public class Windows {
             }
             stage.close();
         });
-        anchorPane.getChildren().addAll(yes,label1,label2,label3,label4,label5,nameField,numberField,subject,man,girl,datePicker);
+        anchorPane.getChildren().addAll(yes,label1,label2,label3,nameField,numberField,subject);
         stage.show();
     }
 
@@ -1059,7 +1056,7 @@ public class Windows {
     void createTeacher(DIDService didService) {
         Stage stage = new Stage();
         AnchorPane anchorPane = new AnchorPane();
-        stage.setScene(new Scene(anchorPane,400,400));
+        stage.setScene(new Scene(anchorPane,400,250));
         stage.initStyle(StageStyle.UTILITY);
         stage.setTitle("输入教师信息");
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -1082,36 +1079,37 @@ public class Windows {
         ChoiceBox<String> subject = new ChoiceBox<>(FXCollections.observableArrayList("金融学院","马克义主义学院","电子与信息工程学院      ","文学院","艺术学院","计算机与软件学院"));
         subject.setLayoutX(150);
         subject.setLayoutY(150);
-        Label label4 = new Label("性别");
-        label4.setLayoutX(100);
-        label4.setLayoutY(200);
-        ToggleGroup group = new ToggleGroup();
-        RadioButton man = new RadioButton("男");
-        man.setLayoutX(180);
-        man.setLayoutY(200);
-        man.setToggleGroup(group);
-        RadioButton girl = new RadioButton("女");
-        girl.setLayoutX(230);
-        girl.setLayoutY(200);
-        girl.setToggleGroup(group);
-        Label label5 = new Label("生日");
-        label5.setLayoutX(100);
-        label5.setLayoutY(250);
-        DatePicker datePicker = new DatePicker();
-        datePicker.setLayoutX(150);
-        datePicker.setLayoutY(250);
+//        Label label4 = new Label("性别");
+//        label4.setLayoutX(100);
+//        label4.setLayoutY(200);
+//        ToggleGroup group = new ToggleGroup();
+//        RadioButton man = new RadioButton("男");
+//        man.setLayoutX(180);
+//        man.setLayoutY(200);
+//        man.setToggleGroup(group);
+//        RadioButton girl = new RadioButton("女");
+//        girl.setLayoutX(230);
+//        girl.setLayoutY(200);
+//        girl.setToggleGroup(group);
+//        Label label5 = new Label("生日");
+//        label5.setLayoutX(100);
+//        label5.setLayoutY(250);
+//        DatePicker datePicker = new DatePicker();
+//        datePicker.setLayoutX(150);
+//        datePicker.setLayoutY(250);
         Button yes = new Button("确定");
         yes.setPrefSize(100,30);
         yes.setLayoutX(150);
-        yes.setLayoutY(350);
+        yes.setLayoutY(200);
         yes.setOnAction(event -> {
             String name = nameField.getText();
             String number = numberField.getText();
             String job = subject.getValue();
-            String gender = man.isSelected() ?  "男" : "女";
-            String date = datePicker.getValue().toString();
-            String data = "教师DID " + "|名字:" + name + " |学号:" + number + " |学院:" + job + " |性别:" + gender + " |出生日期:" + date + "*";
-            String result = cutResult(didService.create(data));
+//            String gender = man.isSelected() ?  "男" : "女";
+//            String date = datePicker.getValue().toString();
+//            String data = "|名字:" + name + " |学号:" + number + " |学院:" + job + " |性别:" + gender + " |出生日期:" + date + "*";
+            String data = "|名字:" + name + " |学号:" + number + " |学院:" + job + "*";
+            String result = cutResult(didService.create("教师DID",data));
             File userTxt = new File("src\\main\\resources\\account\\" + user + ".txt");
             if (userTxt.exists()) {
                 try {
@@ -1134,7 +1132,7 @@ public class Windows {
             }
             stage.close();
         });
-        anchorPane.getChildren().addAll(yes,label1,label2,label3,label4,label5,nameField,numberField,subject,man,girl,datePicker);
+        anchorPane.getChildren().addAll(yes,label1,label2,label3,nameField,numberField,subject);
         stage.show();
     }
 
@@ -1193,8 +1191,8 @@ public class Windows {
             String credit = creditField.getText();
             String gender = major.isSelected() ?  "必修" : "选修";
             String date = datePicker.getValue().toString();
-            String data = "课程DID " + "名称:" + name  + "*" + " 课号:" + number + " 学分:" + credit + "-" +" 性质 :" + gender + " 时间:" + date + "|";
-            String result = cutResult(didService.create(data));
+            String data = "名称:" + name  + "*" + " 课号:" + number + " 学分:" + credit + "*" +" 性质 :" + gender + " 时间:" + date + "|";
+            String result = cutResult(didService.create("课程DID",data));
             File userTxt = new File("src\\main\\resources\\account\\deanOffice.txt");
             if (userTxt.exists()) {
                 try {
@@ -1221,7 +1219,7 @@ public class Windows {
         stage.show();
     }
 
-    // 大框显示信息
+    // TODO:大框显示信息
     void showMessage(String message){
         Stage stage = new Stage();
         AnchorPane anchorPane1 = new AnchorPane();
@@ -1291,7 +1289,7 @@ public class Windows {
         stage.show();
     }
 
-    // 小框显示信息
+    // TODO:小框显示信息
     void alertShow(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("提示信息");
@@ -1301,7 +1299,7 @@ public class Windows {
         alert.showAndWait();
     }
 
-    // 字符串修整
+    // TODO:字符串修整
     String cutResult(String result) {
         result = result.replace(" ","\n");
         result = result.replace(",","");
@@ -1313,6 +1311,7 @@ public class Windows {
         return result;
     }
 
+    // TODO:获取txt文件
     String getTxt(){
         File userTxt = new File("src\\main\\resources\\account\\" + user + ".txt");
         StringBuilder message = null;

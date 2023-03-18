@@ -17,7 +17,7 @@ public class DIDService {
         return count.getResult();
     }
 
-    String create(String data) {
+    String create(String type,String data) {
         ResponseData<CreateWeIdDataResult> responseData = weIdService.createWeId();
         int index = responseData.getResult().toString().indexOf("did:weid:666:");
         String weId = responseData.getResult().toString().substring(index,index +55);
@@ -25,8 +25,8 @@ public class DIDService {
         int indexEnd = responseData.getResult().toString().indexOf("))");
         String PrivateKey = responseData.getResult().toString().substring(indexStart + 11,indexEnd);
         ServiceArgs serviceArgs = new ServiceArgs();
-        serviceArgs.setType(data);
-        serviceArgs.setServiceEndpoint("深圳大学");
+        serviceArgs.setType(type);
+        serviceArgs.setServiceEndpoint(data);
         WeIdPrivateKey weIdPrivateKey = new WeIdPrivateKey();
         weIdPrivateKey.setPrivateKey(PrivateKey);
         weIdService.setService(weId, serviceArgs, weIdPrivateKey);
@@ -38,10 +38,10 @@ public class DIDService {
         return response.getResult();
     }
 
-    boolean addMessage(String DID,String priKey,String message){
+    boolean addMessage(String DID,String priKey,String type,String message){
         ServiceArgs serviceArgs = new ServiceArgs();
-        serviceArgs.setType(message);
-        serviceArgs.setServiceEndpoint("深圳大学");
+        serviceArgs.setType(type);
+        serviceArgs.setServiceEndpoint(message);
         WeIdPrivateKey weIdPrivateKey = new WeIdPrivateKey();
         weIdPrivateKey.setPrivateKey(priKey);
         ResponseData<Boolean> response = weIdService.setService(DID, serviceArgs, weIdPrivateKey);
