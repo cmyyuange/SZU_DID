@@ -35,6 +35,6 @@ configurations.all {
     }
 }
 
-//test {
-//    useJUnitPlatform()
-//}
+test {
+    useJUnitPlatform()
+}

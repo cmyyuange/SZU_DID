@@ -1,1 +1,1 @@
-2023-03-13 20:53:51.875 [JavaFX Application Thread] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-03-29 15:15:25.926 [nioEventLoopGroup-2-1] ERROR ChannelHandler() -  idle state event:READER_IDLE connect8.219.52.112:20200 long time Inactive, disconnect

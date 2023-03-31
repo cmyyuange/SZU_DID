@@ -71,7 +71,7 @@ public class CurriculumThread extends Thread{
                     }else if (!didService.getDIDDocument(credentialPojo.getClaim().get("学生DID").toString()).contains(credentialPojo.getClaim().get("课程DID").toString())){
                         System.out.println("该学生并未选择这门课！");
                     }else {
-                        String message = "学生DID:" + credentialPojo.getClaim().get("课程DID").toString() +
+                        String message = "学生DID:" + credentialPojo.getClaim().get("学生DID").toString() +
                                 " 分数类型:" + credentialPojo.getClaim().get("分数类型").toString() +
                                 " 分数:" + credentialPojo.getClaim().get("分数").toString() + "*";
                         didService.addMessage(credentialPojo.getClaim().get("课程DID").toString(),priKey,"深圳大学学生课程成绩",message);
