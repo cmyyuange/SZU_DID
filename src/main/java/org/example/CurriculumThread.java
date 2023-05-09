@@ -5,9 +5,7 @@ import com.webank.weid.protocol.base.WeIdAuthentication;
 import com.webank.weid.protocol.base.WeIdPrivateKey;
 import com.webank.weid.suite.api.persistence.inf.Persistence;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,31 +26,36 @@ public class CurriculumThread extends Thread{
     @Override
     public void run() {
         int i;
+//        for (int j = 0; j < 100; j++) {
+//            System.out.println(persistence.get("domain.defaultInfo",String.valueOf(j)).getResult());
+//        }
         while (true) {
             try {
                 i = 1;
                 Thread.sleep(100 * 60);
                 while (!persistence.get("domain.defaultInfo",String.valueOf(i)).getResult().equals("")) {
+                    System.out.println("现在是：" + i);
                     String[] strings = persistence.get("domain.defaultInfo",String.valueOf(i)).getResult().split("&");
                     String userDID = strings[0];
                     String curriculumDID = strings[1];
                     String priKey = "";
-                    File userTxt = new File("src\\main\\resources\\account\\deanOffice.txt");
+                    File userTxt1 = new File("src\\main\\resources\\account\\deanOffice.txt");
 
-                    BufferedReader bufferedReader = new BufferedReader(new FileReader(userTxt));
+                    BufferedReader bufferedReader = new BufferedReader(new FileReader(userTxt1));
                     StringBuilder message = new StringBuilder();
-                    String line;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        message.append(line).append("\n");
+                    String line1;
+                    while ((line1 = bufferedReader.readLine()) != null) {
+                        message.append(line1).append("\n");
                     }
                     String temp = message.toString();
                     temp = temp.substring(temp.indexOf("课程weId=" + curriculumDID));
-                    priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 77);
+                    priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 78).trim();
+                    System.out.println(priKey);
 
                     if (didService.getDIDDocument(userDID).contains("学生课程DID")) {
-                        didService.addMessage(curriculumDID,priKey,"深圳大学上课学生","学生:" + userDID);
+                        System.out.println(didService.addMessage(curriculumDID,priKey,"深圳大学上课学生","学生:" + userDID));;
                     }else {
-                        didService.addMessage(curriculumDID,priKey,"深圳大学任课教师","教师:" + userDID);
+                        System.out.println(didService.addMessage(curriculumDID,priKey,"深圳大学任课教师","教师:" + userDID));;
                     }
                     persistence.delete("domain.defaultInfo",String.valueOf(i));
                     i++;
@@ -60,12 +63,13 @@ public class CurriculumThread extends Thread{
 
                 i = 1;
                 while (!persistence.get("domain.defaultInfo","studentScore" + i).getResult().equals("")) {
+                    System.out.println("studentScore" + i);
                     String score = persistence.get("domain.defaultInfo","studentScore" + i).getResult();
                     CredentialPojo credentialPojo = CredentialPojo.fromJson(score);
 
                     String txt = getTxt();
                     String temp = txt.substring(txt.indexOf("课程weId=" + credentialPojo.getClaim().get("课程DID").toString()));
-                    String priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 77);
+                    String priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 78).trim();
                     if (!didService.getDIDDocument(credentialPojo.getClaim().get("课程DID").toString()).contains(credentialPojo.getIssuer())){
                         System.out.println("课程与任课教师不对应！");
                     }else if (!didService.getDIDDocument(credentialPojo.getClaim().get("学生DID").toString()).contains(credentialPojo.getClaim().get("课程DID").toString())){
@@ -82,6 +86,7 @@ public class CurriculumThread extends Thread{
 
                 i = 1;
                 while (!persistence.get("domain.defaultInfo","studentCredit" + i).getResult().equals("")) {
+                    System.out.println("studentCredit" + i);
                     String[] strings = persistence.get("domain.defaultInfo","studentCredit" + i).getResult().split("&");
                     String selectCurriculumDID = strings[0];
                     String userDID = strings[1];

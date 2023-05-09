@@ -1,1 +1,2 @@
-2023-03-29 15:15:25.926 [nioEventLoopGroup-2-1] ERROR ChannelHandler() -  idle state event:READER_IDLE connect8.219.52.112:20200 long time Inactive, disconnect
+2023-04-14 17:02:58.730 [JavaFX Application Thread] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-04-14 17:02:58.833 [JavaFX Application Thread] ERROR CredentialPojoServiceImpl() - [verify] credential verify failed. error message :CREDENTIAL_VERIFY_FAIL
