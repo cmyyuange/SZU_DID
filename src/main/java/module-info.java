@@ -9,6 +9,7 @@ module SZU.DID.main {
     requires static lombok;
     requires transitive org.mapstruct.processor;
     requires fisco.bcos.java.sdk;
+    requires java.logging;
     opens org.example to javafx.fxml;
     exports org.example;
 }

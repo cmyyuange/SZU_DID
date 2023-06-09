@@ -1,299 +1,213 @@
-2023-04-14 17:02:32.077 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.encryptKey:datasource1:encrypt_key_info} is init success.
-2023-04-14 17:02:32.400 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.resourceInfo:datasource1:resource_info} is init success.
-2023-04-14 17:02:32.716 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.defaultInfo:datasource1:default_info} is init success.
-2023-04-14 17:02:33.031 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.templateSecret:datasource1:template_secret} is init success.
-2023-04-14 17:02:33.346 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.masterKey:datasource1:master_secret} is init success.
-2023-04-14 17:02:33.662 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.credentialSignature:datasource1:credential_signature} is init success.
-2023-04-14 17:02:33.977 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.weIdAuth:datasource1:weid_auth} is init success.
-2023-04-14 17:02:34.075 [JavaFX-Launcher] INFO  TransmissionServiceCenter() - [registerService] the service register successfully.
-2023-04-14 17:02:34.075 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin load property.
-2023-04-14 17:02:34.076 [JavaFX-Launcher] INFO  WeServerV2() - [initAmopTopic] the amopId: 1
-2023-04-14 17:02:34.077 [JavaFX-Launcher] INFO  WeServerV2() - [initNetWork] the current nodes: [8.219.52.112:20200].
-2023-04-14 17:02:34.077 [JavaFX-Launcher] INFO  WeServerV2() - [initThreadPool] the threadPool: {maxBlockingQueueSize=1000, channelProcessorThreadSize=200, receiptProcessorThreadSize=200}.
-2023-04-14 17:02:34.077 [JavaFX-Launcher] INFO  WeServerV2() - path:src/main/resources/conf before
-2023-04-14 17:02:34.077 [JavaFX-Launcher] INFO  WeServerV2() - [initThreadPool] the cryptoMaterial: {certPath=src/main/resources/conf, useSMCrypto=0}.
-2023-04-14 17:02:34.077 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init bcos sdk.
-2023-04-14 17:02:34.077 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] the WeServer class is locked.
-2023-04-14 17:02:34.077 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] the bcosSdk is null and build BcosSDK.
-2023-04-14 17:02:34.443 [JavaFX-Launcher] INFO  ConnectionManager() -  all connections, size: 1, list: [ConnectionInfo{host='8.219.52.112', port=20200}]
-2023-04-14 17:02:34.444 [JavaFX-Launcher] INFO  NetworkImp() - 
+2023-06-08 15:25:27.015 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.encryptKey:datasource1:encrypt_key_info} is init success.
+2023-06-08 15:25:27.251 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.resourceInfo:datasource1:resource_info} is init success.
+2023-06-08 15:25:27.480 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.defaultInfo:datasource1:default_info} is init success.
+2023-06-08 15:25:27.709 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.templateSecret:datasource1:template_secret} is init success.
+2023-06-08 15:25:27.937 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.masterKey:datasource1:master_secret} is init success.
+2023-06-08 15:25:28.165 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.credentialSignature:datasource1:credential_signature} is init success.
+2023-06-08 15:25:28.395 [JavaFX-Launcher] INFO  SqlExecutor() - [initLocalTable] the domain {domain.weIdAuth:datasource1:weid_auth} is init success.
+2023-06-08 15:25:28.498 [JavaFX-Launcher] INFO  TransmissionServiceCenter() - [registerService] the service register successfully.
+2023-06-08 15:25:28.498 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin load property.
+2023-06-08 15:25:28.500 [JavaFX-Launcher] INFO  WeServerV2() - [initAmopTopic] the amopId: 1
+2023-06-08 15:25:28.501 [JavaFX-Launcher] INFO  WeServerV2() - [initNetWork] the current nodes: [8.219.52.112:20200].
+2023-06-08 15:25:28.501 [JavaFX-Launcher] INFO  WeServerV2() - [initThreadPool] the threadPool: {maxBlockingQueueSize=1000, channelProcessorThreadSize=200, receiptProcessorThreadSize=200}.
+2023-06-08 15:25:28.501 [JavaFX-Launcher] INFO  WeServerV2() - path:src/main/resources/conf before
+2023-06-08 15:25:28.501 [JavaFX-Launcher] INFO  WeServerV2() - [initThreadPool] the cryptoMaterial: {certPath=src/main/resources/conf, useSMCrypto=0}.
+2023-06-08 15:25:28.501 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init bcos sdk.
+2023-06-08 15:25:28.501 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] the WeServer class is locked.
+2023-06-08 15:25:28.502 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] the bcosSdk is null and build BcosSDK.
+2023-06-08 15:25:28.835 [JavaFX-Launcher] INFO  ConnectionManager() -  all connections, size: 1, list: [ConnectionInfo{host='8.219.52.112', port=20200}]
+2023-06-08 15:25:28.835 [JavaFX-Launcher] INFO  NetworkImp() - 
 * TRACE INFORMATION:
 ----------------------------
 ====> STEP1: try to connect nodes with ecdsa context...
 
-2023-04-14 17:02:34.444 [JavaFX-Launcher] INFO  NetworkImp() - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
-2023-04-14 17:02:34.588 [JavaFX-Launcher] INFO  ConnectionManager() -  build ECDSA ssl context with configured certificates 
-2023-04-14 17:02:37.681 [JavaFX-Launcher] INFO  ConnectionManager() -  ssl handshake success 8.219.52.112:20200
-2023-04-14 17:02:37.683 [nioEventLoopGroup-2-1] INFO  ChannelHandler() -  handshake success, host: 8.219.52.112, port: 20200, ctx: 283624652
-2023-04-14 17:02:37.852 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  node: ClientVersion{version='2.8.0', supportedVersion='2.8.0', chainId='1', buildTime='20210830 12:52:15', buildType='Linux/clang/Release', gitBranch='HEAD', gitCommitHash='30fb38ac5692468058abf6aa12869d2ae776c275'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20210830 12:52:15","Build Type":"Linux/clang/Release","Chain Id":"1","FISCO-BCOS Version":"2.8.0","Git Branch":"HEAD","Git Commit Hash":"30fb38ac5692468058abf6aa12869d2ae776c275","Supported Version":"2.8.0"}}
+2023-06-08 15:25:28.836 [JavaFX-Launcher] INFO  NetworkImp() - ====> <==== STEP1-1: Load certificates for ecdsa context success..., start connManager with ECDSA sslContext
+2023-06-08 15:25:28.988 [JavaFX-Launcher] INFO  ConnectionManager() -  build ECDSA ssl context with configured certificates 
+2023-06-08 15:25:32.894 [JavaFX-Launcher] INFO  ConnectionManager() -  ssl handshake success 8.219.52.112:20200
+2023-06-08 15:25:32.897 [nioEventLoopGroup-2-1] INFO  ChannelHandler() -  handshake success, host: 8.219.52.112, port: 20200, ctx: 740074138
+2023-06-08 15:25:33.048 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  node: ClientVersion{version='2.8.0', supportedVersion='2.8.0', chainId='1', buildTime='20210830 12:52:15', buildType='Linux/clang/Release', gitBranch='HEAD', gitCommitHash='30fb38ac5692468058abf6aa12869d2ae776c275'}, content: {"id":0,"jsonrpc":"2.0","result":{"Build Time":"20210830 12:52:15","Build Type":"Linux/clang/Release","Chain Id":"1","FISCO-BCOS Version":"2.8.0","Git Branch":"HEAD","Git Commit Hash":"30fb38ac5692468058abf6aa12869d2ae776c275","Supported Version":"2.8.0"}}
 
-2023-04-14 17:02:37.853 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  support channel handshake node
-2023-04-14 17:02:37.905 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  channel protocol handshake success, set socket channel protocol, host: 8.219.52.112:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.8.0, EnumProtocol=VERSION_3]
-2023-04-14 17:02:37.931 [JavaFX-Launcher] INFO  ChannelImp() -  Connect to  nodes: 8.219.52.112:20200, 
-2023-04-14 17:02:37.931 [JavaFX-Launcher] INFO  BcosSDK() - create BcosSDK, start channel success, cryptoType: 0
-2023-04-14 17:02:37.938 [JavaFX-Launcher] INFO  BcosSDK() - create BcosSDK, start channel succ, channelProcessorThreadSize: 200, receiptProcessorThreadSize: 200
-2023-04-14 17:02:37.954 [JavaFX-Launcher] INFO  GroupManagerServiceImpl() - registerBlockNumberNotifyHandler
-2023-04-14 17:02:37.955 [JavaFX-Launcher] INFO  GroupManagerServiceImpl() - registerTransactionNotifyHandler
-2023-04-14 17:02:38.244 [JavaFX-Launcher] INFO  BcosSDK() - create BcosSDK, create groupManagerService success
-2023-04-14 17:02:38.794 [JavaFX-Launcher] INFO  AmopImp() - update subscribe inform 1 peers
-2023-04-14 17:02:38.799 [JavaFX-Launcher] INFO  AmopImp() - amop module started
-2023-04-14 17:02:38.799 [JavaFX-Launcher] INFO  AmopImp() - update subscribe inform 1 peers
-2023-04-14 17:02:38.800 [JavaFX-Launcher] INFO  BcosSDK() - create BcosSDK, create Amop success
-2023-04-14 17:02:38.936 [JavaFX-Launcher] INFO  Client() - build client success for group 1, crypto type 0
-2023-04-14 17:02:38.937 [JavaFX-Launcher] INFO  BcosSDK() - create client for group 1 success
-2023-04-14 17:02:38.986 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] the WeServer class is unlock
-2023-04-14 17:02:38.986 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] the bcosSdk is build successfully.
-2023-04-14 17:02:38.986 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init CnsService.
-2023-04-14 17:02:39.056 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init initAmopCallBack.
-2023-04-14 17:02:39.056 [JavaFX-Launcher] INFO  AmopImp() - subscribe normal topic, topic:1
-2023-04-14 17:02:39.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:39.057 [JavaFX-Launcher] INFO  AmopImp() - update subscribe inform 1 peers
-2023-04-14 17:02:39.057 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] WeServer init successfully.
-2023-04-14 17:02:39.058 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin load property.
-2023-04-14 17:02:39.058 [JavaFX-Launcher] INFO  WeServerV2() - [initAmopTopic] the amopId: 1
-2023-04-14 17:02:39.058 [JavaFX-Launcher] INFO  WeServerV2() - [initNetWork] the current nodes: [8.219.52.112:20200].
-2023-04-14 17:02:39.059 [JavaFX-Launcher] INFO  WeServerV2() - [initThreadPool] the threadPool: {maxBlockingQueueSize=1000, channelProcessorThreadSize=200, receiptProcessorThreadSize=200}.
-2023-04-14 17:02:39.059 [JavaFX-Launcher] INFO  WeServerV2() - path:src/main/resources/conf before
-2023-04-14 17:02:39.059 [JavaFX-Launcher] INFO  WeServerV2() - [initThreadPool] the cryptoMaterial: {certPath=src/main/resources/conf, useSMCrypto=0}.
-2023-04-14 17:02:39.060 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init bcos sdk.
-2023-04-14 17:02:39.060 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init CnsService.
-2023-04-14 17:02:39.109 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init initAmopCallBack.
-2023-04-14 17:02:39.110 [JavaFX-Launcher] INFO  AmopImp() - subscribe normal topic, topic:1
-2023-04-14 17:02:39.110 [JavaFX-Launcher] INFO  AmopImp() - update subscribe inform 1 peers
-2023-04-14 17:02:39.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:39.111 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] WeServer init successfully.
-2023-04-14 17:02:39.121 [JavaFX-Launcher] INFO  WeServerV2() - [queryBucketFromCns] query address by type = prd/orgConfig.
-2023-04-14 17:02:39.201 [JavaFX-Launcher] INFO  WeServerV2() - [queryBucketFromCns] query address form CNS successfully.
-2023-04-14 17:02:39.259 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
-2023-04-14 17:02:39.260 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:39.410 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: WeIdContract, value: 0x7fc633b3f72df079a38c963acaae1e9c2b76ddc9
-2023-04-14 17:02:39.460 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
-2023-04-14 17:02:39.460 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:39.512 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: AuthorityIssuerController, value: 0x384c000407a7c7dd1e3eb01138105f8120490be4
-2023-04-14 17:02:39.563 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
-2023-04-14 17:02:39.563 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:39.614 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: SpecificIssuerController, value: 0x72a96146c3d96b92f0bae22fe97302aca035af2a
-2023-04-14 17:02:39.662 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
-2023-04-14 17:02:39.663 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:39.714 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: EvidenceFactory, value: 0xf7fa01238a68a4beb420a8f681909aa2ae98345c
-2023-04-14 17:02:39.763 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
-2023-04-14 17:02:39.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:39.813 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: CptController, value: 0x04d7de40212375a6fdd440a560ae821f7bf4f22c
-2023-04-14 17:02:39.862 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
-2023-04-14 17:02:39.862 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:39.913 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: chainId, value: 666
-2023-04-14 17:02:39.975 [JavaFX-Launcher] INFO  BaseEngine() - WeIdContract init succ
-2023-04-14 17:02:39.975 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:40.123 [JavaFX-Launcher] INFO  BaseEngine() - WeIdContract init succ
-2023-04-14 17:02:40.123 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:40.177 [JavaFX-Launcher] INFO  BaseEngine() - AuthorityIssuerController init succ
-2023-04-14 17:02:40.178 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:40.239 [JavaFX-Launcher] INFO  BaseEngine() - CptController init succ
-2023-04-14 17:02:40.239 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:40.293 [JavaFX-Launcher] INFO  BaseEngine() - CptController init succ
-2023-04-14 17:02:40.294 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:40.346 [JavaFX-Launcher] INFO  BaseEngine() - AuthorityIssuerController init succ
-2023-04-14 17:02:40.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:40.401 [JavaFX-Launcher] INFO  BaseEngine() - SpecificIssuerController init succ
-2023-04-14 17:02:40.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:40.456 [JavaFX-Launcher] INFO  EvidenceServiceEngineV2() - [initEvidenceAddress] the groupId is master.
-2023-04-14 17:02:40.511 [JavaFX-Launcher] INFO  BaseEngine() - EvidenceContract init succ
-2023-04-14 17:02:40.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.111 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.260 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.461 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.564 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.664 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.863 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:49.975 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:50.124 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:50.178 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:50.239 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:50.294 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:50.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:50.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:50.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:58.730 [JavaFX Application Thread] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
-2023-04-14 17:02:58.734 [JavaFX Application Thread] INFO  DataToolUtils() - []
-2023-04-14 17:02:58.833 [JavaFX Application Thread] ERROR CredentialPojoServiceImpl() - [verify] credential verify failed. error message :CREDENTIAL_VERIFY_FAIL
-2023-04-14 17:02:59.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:59.111 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:59.259 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:59.461 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:59.564 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:59.663 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:59.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:59.862 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:02:59.975 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:00.123 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:00.178 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:00.241 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:00.294 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:00.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:00.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:00.513 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.260 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.462 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.563 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.663 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.764 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.864 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:09.977 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:10.125 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:10.179 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:10.239 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:10.294 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:10.359 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:10.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:10.513 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.111 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.260 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.460 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.563 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.663 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.863 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:19.977 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:20.123 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:20.179 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:20.239 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:20.295 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:20.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:20.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:20.514 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.260 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.460 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.562 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.665 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.863 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:29.977 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:30.123 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:30.180 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:30.240 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:30.295 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:30.348 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:30.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:30.514 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.260 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.460 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.563 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.664 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.863 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:39.975 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:40.125 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:40.179 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:40.241 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:40.295 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:40.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:40.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:40.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.057 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.259 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.461 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.563 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.664 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.764 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.863 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:49.976 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:50.124 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:50.179 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:50.240 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:50.295 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:50.346 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:50.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:50.514 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.259 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.460 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.564 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.665 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.862 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:03:59.975 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:00.123 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:00.178 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:00.241 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:00.294 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:00.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:00.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:00.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.259 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.461 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.562 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.665 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.863 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:09.975 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:10.123 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:10.178 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:10.240 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:10.294 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:10.348 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:10.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:10.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.260 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.461 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.563 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.664 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.764 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.865 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:19.976 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:20.124 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:20.178 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:20.240 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:20.295 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:20.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:20.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:20.514 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.259 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.461 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.563 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.664 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.862 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:29.975 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:30.125 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:30.178 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:30.240 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:30.295 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:30.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:30.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:30.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.056 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.259 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.461 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.563 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.663 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.763 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.862 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:39.976 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:40.125 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:40.179 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:40.239 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:40.295 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:40.347 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:40.402 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:40.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:49.057 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:49.110 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
-2023-04-14 17:04:49.259 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:33.049 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  support channel handshake node
+2023-06-08 15:25:33.092 [nioEventLoopGroup-2-1] INFO  ChannelImp() -  channel protocol handshake success, set socket channel protocol, host: 8.219.52.112:20200, channel protocol: ChannelProtocol [protocol=3, nodeVersion=2.8.0, EnumProtocol=VERSION_3]
+2023-06-08 15:25:33.112 [JavaFX-Launcher] INFO  ChannelImp() -  Connect to  nodes: 8.219.52.112:20200, 
+2023-06-08 15:25:33.113 [JavaFX-Launcher] INFO  BcosSDK() - create BcosSDK, start channel success, cryptoType: 0
+2023-06-08 15:25:33.121 [JavaFX-Launcher] INFO  BcosSDK() - create BcosSDK, start channel succ, channelProcessorThreadSize: 200, receiptProcessorThreadSize: 200
+2023-06-08 15:25:33.138 [JavaFX-Launcher] INFO  GroupManagerServiceImpl() - registerBlockNumberNotifyHandler
+2023-06-08 15:25:33.139 [JavaFX-Launcher] INFO  GroupManagerServiceImpl() - registerTransactionNotifyHandler
+2023-06-08 15:25:33.387 [JavaFX-Launcher] INFO  BcosSDK() - create BcosSDK, create groupManagerService success
+2023-06-08 15:25:33.968 [JavaFX-Launcher] INFO  AmopImp() - update subscribe inform 1 peers
+2023-06-08 15:25:33.974 [JavaFX-Launcher] INFO  AmopImp() - amop module started
+2023-06-08 15:25:33.974 [JavaFX-Launcher] INFO  AmopImp() - update subscribe inform 1 peers
+2023-06-08 15:25:33.975 [JavaFX-Launcher] INFO  BcosSDK() - create BcosSDK, create Amop success
+2023-06-08 15:25:34.106 [JavaFX-Launcher] INFO  Client() - build client success for group 1, crypto type 0
+2023-06-08 15:25:34.106 [JavaFX-Launcher] INFO  BcosSDK() - create client for group 1 success
+2023-06-08 15:25:34.148 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] the WeServer class is unlock
+2023-06-08 15:25:34.149 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] the bcosSdk is build successfully.
+2023-06-08 15:25:34.149 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init CnsService.
+2023-06-08 15:25:34.212 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init initAmopCallBack.
+2023-06-08 15:25:34.212 [JavaFX-Launcher] INFO  AmopImp() - subscribe normal topic, topic:1
+2023-06-08 15:25:34.213 [JavaFX-Launcher] INFO  AmopImp() - update subscribe inform 1 peers
+2023-06-08 15:25:34.213 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:34.213 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] WeServer init successfully.
+2023-06-08 15:25:34.213 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin load property.
+2023-06-08 15:25:34.213 [JavaFX-Launcher] INFO  WeServerV2() - [initAmopTopic] the amopId: 1
+2023-06-08 15:25:34.214 [JavaFX-Launcher] INFO  WeServerV2() - [initNetWork] the current nodes: [8.219.52.112:20200].
+2023-06-08 15:25:34.214 [JavaFX-Launcher] INFO  WeServerV2() - [initThreadPool] the threadPool: {maxBlockingQueueSize=1000, channelProcessorThreadSize=200, receiptProcessorThreadSize=200}.
+2023-06-08 15:25:34.214 [JavaFX-Launcher] INFO  WeServerV2() - path:src/main/resources/conf before
+2023-06-08 15:25:34.215 [JavaFX-Launcher] INFO  WeServerV2() - [initThreadPool] the cryptoMaterial: {certPath=src/main/resources/conf, useSMCrypto=0}.
+2023-06-08 15:25:34.215 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init bcos sdk.
+2023-06-08 15:25:34.215 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init CnsService.
+2023-06-08 15:25:34.259 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] begin init initAmopCallBack.
+2023-06-08 15:25:34.260 [JavaFX-Launcher] INFO  AmopImp() - subscribe normal topic, topic:1
+2023-06-08 15:25:34.260 [JavaFX-Launcher] INFO  AmopImp() - update subscribe inform 1 peers
+2023-06-08 15:25:34.260 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:34.260 [JavaFX-Launcher] INFO  WeServerV2() - [WeServer] WeServer init successfully.
+2023-06-08 15:25:34.268 [JavaFX-Launcher] INFO  WeServerV2() - [queryBucketFromCns] query address by type = prd/orgConfig.
+2023-06-08 15:25:34.358 [JavaFX-Launcher] INFO  WeServerV2() - [queryBucketFromCns] query address form CNS successfully.
+2023-06-08 15:25:34.408 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
+2023-06-08 15:25:34.408 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:34.529 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: WeIdContract, value: 0x7fc633b3f72df079a38c963acaae1e9c2b76ddc9
+2023-06-08 15:25:34.571 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
+2023-06-08 15:25:34.572 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:34.617 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: AuthorityIssuerController, value: 0x384c000407a7c7dd1e3eb01138105f8120490be4
+2023-06-08 15:25:34.660 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
+2023-06-08 15:25:34.661 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:34.705 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: SpecificIssuerController, value: 0x72a96146c3d96b92f0bae22fe97302aca035af2a
+2023-06-08 15:25:34.748 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
+2023-06-08 15:25:34.748 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:34.793 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: EvidenceFactory, value: 0xf7fa01238a68a4beb420a8f681909aa2ae98345c
+2023-06-08 15:25:34.836 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
+2023-06-08 15:25:34.836 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:34.881 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: CptController, value: 0x04d7de40212375a6fdd440a560ae821f7bf4f22c
+2023-06-08 15:25:34.923 [JavaFX-Launcher] INFO  BaseEngine() - DataBucket init succ
+2023-06-08 15:25:34.924 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:34.968 [JavaFX-Launcher] INFO  DataBucketServiceEngineV2() - [get] get address successfully, bucketId: globalKey, key: chainId, value: 666
+2023-06-08 15:25:35.030 [JavaFX-Launcher] INFO  BaseEngine() - WeIdContract init succ
+2023-06-08 15:25:35.031 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:35.075 [JavaFX-Launcher] INFO  BaseEngine() - WeIdContract init succ
+2023-06-08 15:25:35.076 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:35.124 [JavaFX-Launcher] INFO  BaseEngine() - AuthorityIssuerController init succ
+2023-06-08 15:25:35.125 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:35.263 [JavaFX-Launcher] INFO  BaseEngine() - CptController init succ
+2023-06-08 15:25:35.263 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:35.311 [JavaFX-Launcher] INFO  BaseEngine() - CptController init succ
+2023-06-08 15:25:35.312 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:35.357 [JavaFX-Launcher] INFO  BaseEngine() - AuthorityIssuerController init succ
+2023-06-08 15:25:35.357 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:35.406 [JavaFX-Launcher] INFO  BaseEngine() - SpecificIssuerController init succ
+2023-06-08 15:25:35.407 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:35.462 [JavaFX-Launcher] INFO  EvidenceServiceEngineV2() - [initEvidenceAddress] the groupId is master.
+2023-06-08 15:25:35.512 [JavaFX-Launcher] INFO  BaseEngine() - EvidenceContract init succ
+2023-06-08 15:25:35.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:44.213 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:44.259 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:44.408 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:44.572 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:44.661 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:44.750 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:44.837 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:44.925 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:45.031 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:45.076 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:45.127 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:45.265 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:45.313 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:45.357 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:45.407 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:45.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:54.213 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:54.261 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:54.410 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:54.572 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:54.661 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:54.749 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:54.836 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:54.924 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:55.032 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:55.076 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:55.125 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:55.265 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:55.312 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:55.358 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:55.407 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:25:55.513 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:04.214 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:04.260 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:04.408 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:04.572 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:04.661 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:04.749 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:04.836 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:04.924 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:05.031 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:05.077 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:05.127 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:05.264 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:05.313 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:05.357 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:05.407 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:05.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:14.214 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:14.261 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:14.409 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:14.572 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:14.661 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:14.748 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:14.838 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:14.924 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:15.031 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:15.077 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:15.125 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:15.264 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:15.312 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:15.357 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:15.407 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:15.514 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:24.214 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:24.259 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:24.408 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:24.572 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:24.661 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:24.749 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:24.837 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:24.925 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:25.031 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:25.076 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:25.125 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:25.265 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:25.312 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:25.357 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:25.407 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:25.514 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:34.214 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:34.259 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:34.408 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:34.572 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:34.661 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:34.748 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:34.836 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:34.923 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:35.031 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:35.075 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:35.126 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:35.263 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:35.312 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:35.357 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:35.406 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:35.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:44.215 [pool-10-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:44.261 [pool-11-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:44.409 [pool-12-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:44.573 [pool-13-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:44.660 [pool-14-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:44.749 [pool-15-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:44.836 [pool-16-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:44.924 [pool-17-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:45.032 [pool-18-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:45.076 [pool-19-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:45.125 [pool-20-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:45.265 [pool-21-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:45.313 [pool-22-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:45.358 [pool-23-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:45.407 [pool-24-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
+2023-06-08 15:26:45.512 [pool-25-thread-1] INFO  EventSubscribeImp() - Resend waiting filters, size: 0
