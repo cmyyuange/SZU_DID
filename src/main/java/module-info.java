@@ -12,4 +12,6 @@ module SZU.DID.main {
     requires java.logging;
     opens org.example to javafx.fxml;
     exports org.example;
+    exports org.example.Time;
+    opens org.example.Time to javafx.fxml;
 }

@@ -1,30 +1,11 @@
-2023-06-07 13:51:09.591 [pool-24-thread-21] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
-2023-06-07 13:52:03.942 [pool-24-thread-64] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
-2023-06-07 14:17:32.019 [pool-24-thread-70] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0xd0a707148d44c705d95ed309dcffc9227205565e
-2023-06-07 14:17:32.020 [pool-24-thread-70] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:17:32.076 [pool-24-thread-14] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0xa19e530ba12c2a713f93c3eb92084776c4535784
-2023-06-07 14:17:32.076 [pool-24-thread-14] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:17:32.695 [pool-24-thread-82] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0xdb4aa9b9f3dac1b45c73c441eddbef0ec8e1bcdd
-2023-06-07 14:17:32.695 [pool-24-thread-82] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:17:32.764 [pool-24-thread-3] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0x29ae17c60e5ffa9ed23e73836987726d846d19c7
-2023-06-07 14:17:32.764 [pool-24-thread-3] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:20:40.435 [pool-24-thread-1] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0xfd3bc677a0e109d0b5e5fccc27285a24f1a03885
-2023-06-07 14:20:40.435 [pool-24-thread-1] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:20:40.443 [pool-24-thread-20] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0xfd3bc677a0e109d0b5e5fccc27285a24f1a03885
-2023-06-07 14:20:40.444 [pool-24-thread-20] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:21:42.262 [pool-24-thread-18] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0x84773435c2a19aacdc1baff0e274332ee117c39d
-2023-06-07 14:21:42.262 [pool-24-thread-18] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:21:42.735 [pool-24-thread-19] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0x34323174500532d7c4dfda8322fde8971a87180d
-2023-06-07 14:21:42.735 [pool-24-thread-19] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:21:42.744 [pool-24-thread-3] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0xd763f408a484e5b7be5799ecf892a4d926ca81e4
-2023-06-07 14:21:42.744 [pool-24-thread-3] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:22:31.645 [pool-24-thread-60] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0xe52c321e29f81dd258aadaaa0c33f2c6bf72cf8b
-2023-06-07 14:22:31.645 [pool-24-thread-60] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:22:31.732 [pool-24-thread-39] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0x9e8e255184acd25b401c3357d8baf946595a3844
-2023-06-07 14:22:31.732 [pool-24-thread-39] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:22:31.770 [pool-24-thread-26] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0x2e43c9804a42022346d08d791a6a8764bdcd6b15
-2023-06-07 14:22:31.771 [pool-24-thread-26] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:22:31.771 [pool-24-thread-10] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0x2dba375258c46c0d91a444bb69c73d5ca1337623
-2023-06-07 14:22:31.771 [pool-24-thread-10] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
-2023-06-07 14:23:50.538 [pool-24-thread-40] ERROR WeIdServiceEngineV2() - Create WeId failed: RevertInstruction. weid address is 0x61b19bb5076d94eeb6b3f30bf19962e242239bf8
-2023-06-07 14:23:50.539 [pool-24-thread-40] ERROR WeIdServiceImpl() - [createWeId] Create weId failed. error message is :the weid has already exist on blockchain.
+2023-06-20 13:50:30.773 [main] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 13:52:04.481 [pool-24-thread-21] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 13:52:42.968 [pool-24-thread-82] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 13:54:15.886 [pool-24-thread-1] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 13:54:30.325 [pool-24-thread-1] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 13:55:17.924 [pool-24-thread-21] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 13:56:10.513 [pool-24-thread-9] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 13:57:05.441 [pool-24-thread-6] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 13:57:49.258 [pool-24-thread-68] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 14:00:45.590 [pool-24-thread-6] WARN  JsonMetaSchema() - Unknown keyword cptType - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2023-06-20 14:53:13.757 [pool-24-thread-1] ERROR CredentialPojo() - create CredentialPojo with JSON String failed, credential issuer invalid or mismatch the WeID auth
