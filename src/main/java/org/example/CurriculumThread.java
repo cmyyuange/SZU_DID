@@ -32,7 +32,7 @@ public class CurriculumThread extends Thread{
         while (true) {
             try {
                 i = 1;
-                Thread.sleep(100 * 60);
+                Thread.sleep(100);
                 while (!persistence.get("domain.defaultInfo",String.valueOf(i)).getResult().equals("")) {
                     System.out.println("现在是：" + i);
                     String[] strings = persistence.get("domain.defaultInfo",String.valueOf(i)).getResult().split("&");

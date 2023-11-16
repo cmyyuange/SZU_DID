@@ -344,7 +344,7 @@ public class Windows {
                 String temp = message.toString();
                 // 获取课程DID对应的私钥
                 temp = temp.substring(temp.indexOf("课程weId=" + DIDs.getValue()));
-                priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 77);
+                priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 78).trim();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -739,7 +739,7 @@ public class Windows {
                         String temp = message.toString();
                         // 获取所有课程DID对应的私钥
                         temp = temp.substring(temp.indexOf(issuer));
-                        priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 77);
+                        priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 78).trim();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -974,25 +974,25 @@ public class Windows {
         AnchorPane anchorPane = new AnchorPane();
         stage.setScene(new Scene(anchorPane,400,250));
         stage.initStyle(StageStyle.UTILITY);
-        stage.setTitle("输入学生信息");
+        stage.setTitle("输入账户信息");
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
-        Label label1 = new Label("姓名");
+        Label label1 = new Label("账户名称");
         label1.setLayoutX(100);
         label1.setLayoutY(50);
         TextField nameField = new TextField();
         nameField.setLayoutX(150);
         nameField.setLayoutY(50);
-        Label label2 = new Label("学号");
+        Label label2 = new Label("邮箱地址");
         label2.setLayoutX(100);
         label2.setLayoutY(100);
         TextField numberField = new TextField();
         numberField.setLayoutX(150);
         numberField.setLayoutY(100);
-        Label label3 = new Label("专业");
+        Label label3 = new Label("所属单位");
         label3.setLayoutX(100);
         label3.setLayoutY(150);
-        ChoiceBox<String> subject = new ChoiceBox<>(FXCollections.observableArrayList("通信工程","集成电路","计算机科学与技术        ","软件工程","信息与通信工程","金融科技"));
+        ChoiceBox<String> subject = new ChoiceBox<>(FXCollections.observableArrayList("通信工程","集成电路","计算机科学与技术        ","软件工程","信息与通信工程","金融科技","计算机学院"));
         subject.setLayoutX(150);
         subject.setLayoutY(150);
 //        Label label4 = new Label("性别");
@@ -1232,7 +1232,7 @@ public class Windows {
         scrollPane.setPrefSize(600,650);
         TextArea textArea = new TextArea();
         textArea.setPrefSize(595,645);
-        textArea.setEditable(false);
+        //textArea.setEditable(false);
         textArea.setText(message);
         scrollPane.setContent(textArea);
         Button createFile = new Button("生成文件");
