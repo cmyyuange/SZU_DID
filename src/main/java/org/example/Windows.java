@@ -388,9 +388,9 @@ public class Windows {
                     message.append(line).append("\n");
                 }
                 String temp = message.toString();
-                while (temp.contains("课程weId=")) {
-                        observableList.add(temp.substring(temp.indexOf("课程weId=") + 7,temp.indexOf("课程weId=") + 7 + 55));
-                        temp = temp.substring(temp.indexOf("课程weId=") + 7 + 55);
+                while (temp.contains("weId=")) {
+                        observableList.add(temp.substring(temp.indexOf("weId=") + 7,temp.indexOf("weId=") + 7 + 55));
+                        temp = temp.substring(temp.indexOf("weId=") + 7 + 55);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
