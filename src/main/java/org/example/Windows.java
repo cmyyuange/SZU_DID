@@ -343,7 +343,7 @@ public class Windows {
                 }
                 String temp = message.toString();
                 // 获取课程DID对应的私钥
-                temp = temp.substring(temp.indexOf("课程weId=" + DIDs.getValue()));
+                temp = temp.substring(temp.indexOf("weId=" + DIDs.getValue()));
                 priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 78).trim();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -389,8 +389,8 @@ public class Windows {
                 }
                 String temp = message.toString();
                 while (temp.contains("weId=")) {
-                        observableList.add(temp.substring(temp.indexOf("weId=") + 7,temp.indexOf("weId=") + 7 + 55));
-                        temp = temp.substring(temp.indexOf("weId=") + 7 + 55);
+                        observableList.add(temp.substring(temp.indexOf("weId=") + 5,temp.indexOf("weId=") + 5 + 55));
+                        temp = temp.substring(temp.indexOf("weId=") + 5 + 55);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

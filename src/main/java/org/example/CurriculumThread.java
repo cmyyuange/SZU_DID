@@ -52,7 +52,7 @@ public class CurriculumThread extends Thread{
                     priKey = temp.substring(temp.indexOf("privateKey=") + 11,temp.indexOf("privateKey=") + 11 + 78).trim();
                     System.out.println(priKey);
 
-                    if (didService.getDIDDocument(userDID).contains("学生课程DID")) {
+                    if (didService.getDIDDocument(userDID).contains("学生")) {
                         System.out.println(didService.addMessage(curriculumDID,priKey,"深圳大学上课学生","学生:" + userDID));;
                     }else {
                         System.out.println(didService.addMessage(curriculumDID,priKey,"深圳大学任课教师","教师:" + userDID));;
